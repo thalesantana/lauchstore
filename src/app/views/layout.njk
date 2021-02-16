@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     
-    {%block head%}
+    {% block head %}
         <title>Launchstore</title>
-    {%endblock%}
+    {% endblock %}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
 </head>
 
 <body >
-    {% extends "parts/header.njk" %}
+    {% include "parts/header.njk" %}
     
     {% block content %}{% endblock %}   
         
-    {% extends "parts/footer.njk" %}
+    {% include "parts/footer.njk" %}
 
 </body>
 
