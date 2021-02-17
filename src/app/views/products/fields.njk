@@ -43,7 +43,7 @@
         >
     </div>
     {% if product.old_price %}
-        <input type="hidden" name="old_price" value={{product.old_price}}>
+        <input type="hidden" name="old_price" value="{{product.old_price}}">
     {% endif %}
 </div>
 
@@ -58,7 +58,7 @@
         >
     </div>
 </div>
-{% if product.status %}
+{% if (product.status == '1') or (product.status == '0')  %}
     <div class="item">
         <div>Disponível</div>
         <div>
@@ -67,16 +67,16 @@
                     type="radio" 
                     name="status" 
                     Value="1" 
-                    {% if product.status == "1" %}
+                    {% if product.quantity == "1" %}
                     checked
                     {% endif %}>sim
             </span>
-            span>
+            <span>
                 <input 
                     type="radio" 
                     name="status" 
                     Value="0" 
-                    {%if product.status == "0" %}
+                    {%if product.quantity == "0" %}
                     checked
                     {%endif%}>Não
             </span>
