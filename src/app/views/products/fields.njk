@@ -32,6 +32,37 @@
 </div>
 
 <div class="item">
+    <div>Fotos</div>
+    <div>
+        <div id="photos-upload">
+            <input id="photos-input" 
+            type="file" 
+            name="photos" 
+            multiple
+            accept="image/*"
+            onchange="PhotosUpload.handleFileInput(event)"
+            >
+            <p>Selecione até 6 fotos</p>
+        </div>
+
+        <div id="photos-preview">
+            {% if files %}
+                {%for image in files%}
+                    <div class="photo" id="{{image.id}}">
+                        <img src="{{image.src}}" alt="{{image.name}}">
+                        <i class="material-icons"
+                            onclick="PhotosUpload.removeOldPhoto(event)"
+                        > close</i>
+                    </div>
+                {%endfor%}
+                <input type="hidden" name="removed_files">
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+
+<div class="item">
     <div>Valor</div>
     <div>
         <input 
@@ -51,7 +82,7 @@
     <div>Quantidade</div>
     <div>
         <input 
-            type="numbere"
+            type="number"
             name="quantity"
             placeholder="Estoque Disponivel"
             value="{{ product.quantity}}"
@@ -67,7 +98,7 @@
                     type="radio" 
                     name="status" 
                     Value="1" 
-                    {% if product.quantity == "1" %}
+                    {% if product.status == "1" %}
                     checked
                     {% endif %}>sim
             </span>
@@ -76,7 +107,7 @@
                     type="radio" 
                     name="status" 
                     Value="0" 
-                    {%if product.quantity == "0" %}
+                    {%if product.status == "0" %}
                     checked
                     {%endif%}>Não
             </span>
