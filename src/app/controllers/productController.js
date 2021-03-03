@@ -22,7 +22,7 @@ module.exports = {
         let results = await Product.find(req.params.id)
         const product = results.rows[0]
 
-        if(!product) return res.send("Product Not Fpund")
+        if(!product) return res.send("Product Not Found")
 
         const{day, hour, minutes, month} = date(product.updated_at)
 
