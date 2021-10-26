@@ -53,6 +53,7 @@ module.exports = {
             }
         }
         const { userId: id } = req.session
+        
         let results = await Product.create(req.body,id)
         const productId = results.rows[0].id
 
