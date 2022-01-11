@@ -46,7 +46,7 @@ module.exports = {
         //Logica de salvar
 
         const keys= Object.keys(req.body) // retorna chave de todos vetores
-        //console.log(req.body)
+        
         for(key of keys){
             if(req.body[key] == ""){ // Verifica se tem campos vazios
                 return res.send("Please, fill all fields!")
