@@ -1,6 +1,9 @@
+section.password.container
 section.login.container{
     max-width: 500px;
 }
+
+section.password.container input,
 section.login.container input
 {
     max-width: 100%;
@@ -10,7 +13,8 @@ section.login.container input
     max-width:fit-content;
     margin: auto;
 }
-section.login.container .fields{
+section.login.container .fields,
+section.password.container, .fields{
     margin-bottom: 32px;
 }
 
